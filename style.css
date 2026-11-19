@@ -24,6 +24,8 @@ header { border-bottom: 1px solid var(--line); }
 nav { display: flex; align-items: center; gap: clamp(.8rem,2vw,2rem); }
 nav a { padding: .25rem 0; } nav [aria-current] { box-shadow: 0 2px var(--accent); color: var(--link); }
 button { background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: .35rem; padding: .35rem .7rem; font: inherit; font-size: .9rem; cursor: pointer; }
+.appearance-controls { display: flex; align-items: center; gap: .4rem; }
+#cat-mode[aria-pressed="true"] { background: var(--tint); color: var(--link); border-color: var(--accent); }
 .shell { display: grid; grid-template-columns: minmax(205px,245px) minmax(0,760px); gap: clamp(2.5rem,6vw,6rem); padding-block: 3rem 4rem; min-height: 80vh; }
 aside { font-size: .96rem; }
 .portrait { width: 154px; height: 154px; object-fit: cover; border-radius: 50%; border: 4px solid var(--bg); outline: 1px solid var(--line); display: block; }
@@ -45,6 +47,48 @@ main article + article { margin-top: 1.5rem; }
 table { width: 100%; border-collapse: collapse; font-size: 1rem; } caption { text-align: left; color: var(--muted); margin-bottom: .35rem; }
 th,td { text-align: left; padding: .5rem .65rem; border-bottom: 1px solid var(--line); } thead { background: var(--tint); } tbody th { font-weight: 400; }
 footer { border-top: 1px solid var(--line); color: var(--muted); padding-block: 1.1rem; font-size: .9rem; }
+.site-cat { display: none; pointer-events: none; user-select: none; }
+.cats-on .site-cat { display: inline-block; }
+.cat-heading, .footer-line { display: flex; justify-content: space-between; align-items: flex-end; gap: .5rem; }
+.footer-line { align-items: center; }
+.cats-on footer { padding-bottom: 45px; }
+.cat-black, .cat-tuxedo, .cat-piebald, .cat-ginger {
+  flex: none;
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  image-rendering: pixelated;
+}
+.cat-ledge { width: 48px; height: 34px; overflow: hidden; flex: none; margin-bottom: -.45rem; }
+.cat-black { display: block; width: 48px; height: 36px; background-image: url("/assets/cats/black.png"); }
+.cat-tuxedo { width: 42px; height: 44px; margin-bottom: -.45rem; background-image: url("/assets/cats/tuxedo.png"); }
+.cat-piebald { width: 60px; height: 36px; background-image: url("/assets/cats/piebald.png"); }
+.cat-walkway { position: fixed; bottom: env(safe-area-inset-bottom, 0px); left: 0; right: 0; z-index: 2; }
+.cat-route { width: calc(100% - 60px); height: 40px; }
+.cat-turn, .cat-ginger { display: block; width: 60px; height: 40px; }
+.cat-ginger { background-image: url("/assets/cats/ginger.png"); }
+:root[data-theme="dark"] .cat-ginger { background-image: url("/assets/cats/ginger-night.png"); }
+@media (prefers-reduced-motion: no-preference) {
+  .cat-route { animation: cat-cross 56s linear -5s infinite; }
+  .cat-turn { animation: cat-turn 56s step-end -5s infinite; }
+  .cat-ginger { animation: cat-step .42s step-end infinite; }
+  .cat-black { animation: cat-peek 9s ease-in-out -2s infinite, cat-blink 4.8s step-end infinite; }
+  .cat-piebald { animation: cat-step 3.6s step-end infinite; }
+  .cat-tuxedo { animation: cat-wave 7s step-end -2s infinite; }
+}
+@keyframes cat-cross { 0%,100% { transform: translateX(0); } 50% { transform: translateX(100%); } }
+@keyframes cat-turn { 0%,100% { transform: scaleX(1); } 50% { transform: scaleX(-1); } }
+@keyframes cat-step { 50% { background-position: 100% 0; } }
+@keyframes cat-peek {
+  0%,24%,100% { transform: translateY(97%); }
+  34%,40% { transform: translateY(48%); }
+  49%,84% { transform: translateY(0); }
+}
+@keyframes cat-blink { 0%,96% { background-position: 0 0; } 93% { background-position: 100% 0; } }
+@keyframes cat-wave {
+  0%,62%,74%,86%,100% { background-position: 0 0; }
+  56%,68%,80% { background-position: 100% 0; }
+}
+@media (min-width: 741px) and (max-width: 900px) { .masthead { gap: .8rem; } }
 @media(max-width:740px) {
   .masthead { flex-wrap: wrap; gap: .6rem; padding-block: .8rem; } nav { order: 1; width: 100%; justify-content: space-between; gap: .45rem; font-size: .95rem; }
   .shell { grid-template-columns: 1fr; padding-block: 1.55rem 2.5rem; gap: 1.5rem; }

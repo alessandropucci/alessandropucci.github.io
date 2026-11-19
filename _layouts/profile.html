@@ -6,6 +6,7 @@
   <title>{{ page.title | escape }} · Alessandro Pucci</title>
   <meta name="description" content="{{ page.description | escape }}">
   <script src="/theme.js"></script>
+  <script defer src="/cats.js"></script>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -15,7 +16,10 @@
     <nav aria-label="Main navigation">
       {% for item in site.data.navigation %}<a href="{{ item.url }}"{% if page.section == item.label %} aria-current="location"{% endif %}>{{ item.label }}</a>{% endfor %}
     </nav>
-    <button id="theme" type="button" aria-label="Dark theme" aria-pressed="false" hidden>◐ Theme</button>
+    <div class="appearance-controls">
+      <button id="theme" type="button" aria-label="Dark theme" aria-pressed="false" hidden>◐ Theme</button>
+      <button id="cat-mode" type="button" aria-pressed="true" hidden><span aria-hidden="true">🐾</span> Cat mode</button>
+    </div>
   </div></header>
   <div class="shell">
     <aside aria-label="Author profile">
@@ -35,6 +39,9 @@
     </aside>
     <main id="main">{{ content }}</main>
   </div>
-  <footer><div>Alessandro Pucci · <a href="mailto:al.pucci@ing.uniroma2.it">Get in touch</a></div></footer>
+  <footer><div class="footer-line"><span>Alessandro Pucci · <a href="mailto:al.pucci@ing.uniroma2.it">Get in touch</a></span>
+    <span class="site-cat cat-piebald" aria-hidden="true"></span>
+  </div></footer>
+  <div class="site-cat cat-walkway" aria-hidden="true"><div class="cat-route"><span class="cat-turn"><span class="cat-ginger"></span></span></div></div>
 </body>
 </html>
