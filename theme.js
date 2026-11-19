@@ -7,7 +7,6 @@
     const dark = choice === "dark" || (choice !== "light" && preference.matches);
     document.documentElement.dataset.theme = dark ? "dark" : "light";
     document.getElementById("theme")?.setAttribute("aria-pressed", String(dark));
-    document.dispatchEvent(new Event("portfolio-theme-change"));
   }
 
   applyTheme();

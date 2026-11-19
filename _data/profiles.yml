@@ -1,0 +1,21 @@
+- name: Email
+  mark: "@"
+  url: mailto:al.pucci@ing.uniroma2.it
+- name: LinkedIn
+  mark: in
+  url: https://www.linkedin.com/in/alessandro-pucci-474423225/
+- name: Google Scholar
+  mark: G
+  url: https://scholar.google.com/citations?user=F2of-psAAAAJ&hl=en
+- name: ORCID
+  mark: iD
+  url: https://orcid.org/0009-0003-4999-2629
+- name: Semantic Scholar
+  mark: S
+  url: https://www.semanticscholar.org/author/5762735
+- name: GitHub
+  mark: GH
+  url: https://github.com/alessandropucci
+- name: Hugging Face
+  mark: HF
+  url: https://huggingface.co/alessandropucci

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | escape }} · Alessandro Pucci</title>
+  <meta name="description" content="{{ page.description | escape }}">
+  <script src="/theme.js"></script>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header><div class="masthead">
+    <a class="site-name" href="/">Alessandro Pucci</a>
+    <nav aria-label="Main navigation">
+      {% for item in site.data.navigation %}<a href="{{ item.url }}"{% if page.section == item.label %} aria-current="location"{% endif %}>{{ item.label }}</a>{% endfor %}
+    </nav>
+    <button id="theme" type="button" aria-label="Dark theme" aria-pressed="false" hidden>◐ Theme</button>
+  </div></header>
+  <div class="shell">
+    <aside aria-label="Author profile">
+      <div class="identity">
+        <img class="portrait" src="/portrait.jpg" width="160" height="160" alt="Alessandro Pucci">
+        <div><p class="author-name">Alessandro Pucci</p><p class="occupation">PhD Student in Data Science</p>
+        <p class="institution">University of Rome Tor Vergata<br>Rome, Italy</p></div>
+      </div>
+      <ul class="profiles">
+        {% for item in site.data.profiles %}<li><a href="{{ item.url | escape }}"><span aria-hidden="true">{{ item.mark }}</span>{{ item.name }}</a></li>{% endfor %}
+      </ul>
+      <details><summary>Search indexes</summary>
+        <ul><li><a href="https://dblp.org/search?q=Alessandro%20Pucci">DBLP</a></li>
+        <li><a href="https://aclanthology.org/search/?q=Alessandro%20Pucci">ACL Anthology</a></li>
+        <li><a href="https://openreview.net/search?term=Alessandro%20Pucci">OpenReview</a></li></ul>
+      </details>
+    </aside>
+    <main id="main">{{ content }}</main>
+  </div>
+  <footer><div>Alessandro Pucci · <a href="mailto:al.pucci@ing.uniroma2.it">Get in touch</a></div></footer>
+</body>
+</html>

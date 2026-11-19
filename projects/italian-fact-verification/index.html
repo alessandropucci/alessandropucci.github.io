@@ -1,0 +1,16 @@
+---
+layout: profile
+title: Italian fact verification
+section: Projects
+description: Model size and task-specific training for Italian fact verification at NL4AI 2026.
+---
+<p class="meta"><a href="/projects/">Projects</a> / NL4AI 2026</p>
+<h1>Italian fact verification</h1>
+<p>Alessandro Pucci, Danilo Croce and Roberto Basili<br>University of Rome Tor Vergata</p>
+<h2>Research question</h2><p>If a model has to judge an Italian claim against a supplied passage, when does training for that task help more than increasing the model’s size?</p>
+<h2>How we tested it</h2><p>We evaluated models on 2,063 manually validated claim–passage pairs from FEVER-IT. Each passage either supports the claim, contradicts it, or contains too little information to decide. We compared general-purpose models given a few examples with a task-adapted Llama model and two smaller text classifiers.</p>
+<h2>What we found</h2>
+<table><caption>Llama 3.1 8B accuracy on the FEVER-IT test set</caption><thead><tr><th scope="col">Setting</th><th scope="col">Accuracy</th></tr></thead><tbody><tr><th scope="row">Few-shot prompting</th><td>70.67%</td></tr><tr><th scope="row">LoRA adaptation</th><td>88.85%</td></tr></tbody></table>
+<p>The largest improvement came on claims for which the passage offered insufficient evidence. Among the larger general-purpose models, increasing parameter count did not consistently improve accuracy.</p>
+<h2>Publication</h2><p><cite>Scale or Specialization? Evaluating Language Models for Italian Fact Verification.</cite> Presented at the Ninth Workshop on Natural Language for Artificial Intelligence in Perugia, Italy.</p>
+<p class="actions"><a href="https://ceur-ws.org/Vol-4315/paper21.pdf">Paper (PDF)</a><a href="https://ceur-ws.org/Vol-4315/">Proceedings</a><a href="https://www.linkedin.com/posts/alessandro-pucci-474423225_aixia2026-nl4ai-nlp-activity-7515313101471285249-1EFQ">Conference post</a></p>
