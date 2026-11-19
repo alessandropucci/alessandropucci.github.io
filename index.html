@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Alessandro Pucci, dottorando in Data Science a Roma Tor Vergata. Ricerca su modelli linguistici, bioinformatica e proteomica.">
+  <title>Alessandro Pucci · Ricerca e pubblicazioni</title>
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="inizio">
+  <a class="skip" href="#profilo">Vai al contenuto</a>
+  <header class="top"><div class="wrap bar">
+    <a class="brand" href="#inizio" aria-label="Alessandro Pucci, inizio pagina">ap<span>.</span></a>
+    <nav aria-label="Navigazione principale">
+      <a href="#ricerca">Ricerca</a><a href="#percorso">Percorso</a><a href="#pubblicazioni">Pubblicazioni</a>
+    </nav>
+    <button id="theme" type="button" hidden aria-label="Tema scuro" aria-pressed="false"><span class="theme-icon" aria-hidden="true">◐</span> Tema</button>
+  </div></header>
+  <main class="wrap" id="profilo">
+    <section class="hero" aria-labelledby="name">
+      <div class="intro">
+        <p class="kicker">Dottorando in Data Science</p>
+        <h1 id="name">Alessandro<br><em>Pucci</em></h1>
+        <p class="lead">Studio come i modelli linguistici usano le fonti e quando sanno riconoscere che le informazioni disponibili sono insufficienti.</p>
+        <p class="affiliation">Università di Roma Tor Vergata</p>
+        <div class="links"><a href="mailto:al.pucci@ing.uniroma2.it">Scrivimi</a><a href="https://github.com/alessandropucci">GitHub</a><a href="https://orcid.org/0009-0003-4999-2629">ORCID</a></div>
+      </div>
+      <div class="art" aria-hidden="true"><canvas id="field"></canvas></div>
+    </section>
+    <section class="section" id="ricerca">
+      <h2>Ricerca</h2>
+      <div class="entries">
+        <article><h3>Verifica dei fatti in italiano</h3><p>Su FEVER-IT ho confrontato modelli di diverse dimensioni. Specializzando Llama 3.1 8B sul compito, l’accuratezza è passata dal 70,7% all’88,9%. Il guadagno maggiore riguarda i casi in cui le fonti non bastano a dare un verdetto.</p><a href="https://ceur-ws.org/Vol-4315/paper21.pdf">Leggi lo studio · PDF</a></article>
+        <article><h3>Cercare proteine per somiglianza</h3><p>Ho costruito un prototipo per esplorare Swiss-Prot a partire da due descrizioni della stessa proteina. Una è la sequenza di amminoacidi, rappresentata con ESM-2. L’altra è il testo con cui i curatori ne descrivono la funzione.</p></article>
+        <article><h3>Proteomica clinica</h3><p>All’Ospedale Pediatrico Bambino Gesù ho analizzato dati proteomici e immunologici. Nel lavoro sul Long COVID pediatrico ho contribuito a studiare quali profili proteici distinguono i bambini con Long COVID dai gruppi di controllo.</p></article>
+      </div>
+    </section>
+    <section class="section" id="percorso">
+      <h2>Percorso</h2>
+      <div class="entries timeline">
+        <article><p class="date">Dal 2025</p><div><h3>Dottorato in Data Science</h3><p>Università di Roma Tor Vergata</p></div></article>
+        <article><p class="date">2023</p><div><h3>Laurea magistrale in Bioinformatica</h3><p>Università di Roma Tor Vergata</p></div></article>
+        <article><p class="date">2021</p><div><h3>Laurea in Scienze biologiche</h3><p>Università di Roma Tor Vergata</p></div></article>
+      </div>
+    </section>
+    <section class="section" id="pubblicazioni">
+      <h2>Pubblicazioni selezionate</h2>
+      <div class="entries papers">
+        <article><p class="date">2026 · NL4AI</p><h3><a lang="en" href="https://ceur-ws.org/Vol-4315/paper21.pdf">Scale or Specialization? Evaluating Language Models for Italian Fact Verification</a></h3><p>Alessandro Pucci, Danilo Croce, Roberto Basili</p></article>
+        <article><p class="date">2026 · iScience</p><h3><a lang="en" href="https://doi.org/10.1016/j.isci.2026.117288">How past transient viremia shape natural killer cells’ antibody-dependent functions in youth with perinatal HIV</a></h3></article>
+        <article><p class="date">2026 · JEADV</p><h3><a lang="en" href="https://doi.org/10.1111/jdv.70252">High-throughput proteomics uncovers molecular clusters and biomarkers of severity in bullous pemphigoid</a></h3></article>
+        <article><p class="date">2025 · Pediatric Research</p><h3><a lang="en" href="https://pubmed.ncbi.nlm.nih.gov/39849114/">Distinct pro-inflammatory/pro-angiogenetic signatures distinguish children with Long COVID from controls</a></h3></article>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap"><span>Alessandro Pucci</span><a href="#inizio">Torna all’inizio</a></footer>
+  <script src="field.js"></script>
+</body>
+</html>
