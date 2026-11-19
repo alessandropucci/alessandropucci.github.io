@@ -8,6 +8,26 @@ description: Alessandro Pucci is a PhD student in Data Science at the University
 <p>I’m a PhD student in Data Science at the University of Rome Tor Vergata. I’m curious about what happens when AI agents tackle a problem together. Can one agent spot a gap in another’s reasoning? When they disagree, what evidence would help them settle it?</p>
 <p>These questions shape my interests in generative AI, multi-agent systems, and scientific and logical reasoning. I’m also interested in how agents find the information they need through retrieval, and which reasoning skills a smaller model can learn from a larger one through knowledge distillation.</p>
 
+<h2>What I’m working on</h2>
+<div class="research-grid">
+  <section>
+    <h3>Reasoning about language</h3>
+    <p>I use FrameNet to study how models interpret who did what to whom. I also investigate whether models can spot inconsistencies across contract clauses.</p>
+  </section>
+  <section>
+    <h3>Multi-agent reasoning</h3>
+    <p>I’d like to explore how agents could test competing scientific hypotheses. One could propose an explanation, another look for a counterexample, and a third identify the observation that would distinguish between them.</p>
+  </section>
+  <section>
+    <h3>Knowledge distillation</h3>
+    <p>My work on Italian fact verification sparked a broader question: which decisions can a small model learn from a larger teacher? I’d like to apply distillation to ranking passages for retrieval, spotting conflicts between contract clauses, and choosing when an agent should ask for more evidence. I want to measure how well those skills transfer to unfamiliar examples and how much they cost to run.</p>
+  </section>
+  <section>
+    <h3>Retrieval across text and protein sequences</h3>
+    <p>I’m exploring two ways to search Swiss-Prot for related proteins: by amino acid sequence and by the descriptions of their biological functions. Where do the two searches agree, and what does each one find that the other misses?</p>
+  </section>
+</div>
+
 <h2>Featured project</h2>
 <article class="project">
   <p class="meta">NL4AI 2026 · Perugia, Italy</p>
@@ -15,38 +35,31 @@ description: Alessandro Pucci is a PhD student in Data Science at the University
   <p>We tested how well language models verify claims in Italian. On FEVER-IT, adapting Llama 3.1 8B raised accuracy from 70.67% to 88.85%. The largest gain came on claims where the evidence was too thin to reach a verdict.</p>
   <p class="actions"><a href="/projects/italian-fact-verification/">Project</a><a href="https://ceur-ws.org/Vol-4315/paper21.pdf">Paper (PDF)</a></p>
 </article>
-
-<h2>What I’m working on</h2>
-<div class="research-grid">
-  <section>
-    <h3>Knowledge distillation</h3>
-    <p>My work on Italian fact verification sparked a broader question: which decisions can a small model learn from a larger teacher? I’d like to apply distillation to ranking passages for retrieval, spotting conflicts between contract clauses, and choosing when an agent should ask for more evidence. I want to measure how well those skills transfer to unfamiliar examples and how much they cost to run.</p>
-  </section>
-  <section>
-    <h3>Multi-agent reasoning</h3>
-    <p>I’d like to explore how agents could test competing scientific hypotheses. One could propose an explanation, another look for a counterexample, and a third identify the observation that would distinguish between them.</p>
-  </section>
-  <section>
-    <h3>Reasoning about language</h3>
-    <p>I use FrameNet to study how models interpret who did what to whom. I also investigate whether models can spot inconsistencies across contract clauses.</p>
-  </section>
-  <section>
-    <h3>Retrieval across text and protein sequences</h3>
-    <p>I’m exploring two ways to search Swiss-Prot for related proteins: by amino acid sequence and by the descriptions of their biological functions. Where do the two searches agree, and what does each one find that the other misses?</p>
-  </section>
-</div>
 <p><a href="/publications/">View selected publications</a></p>
 
 <style>
 .research-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.4rem 2rem;
+  gap: 1rem;
 }
-.research-grid section { border-bottom: 1px solid var(--line); }
-.research-grid h3 { color: var(--link); }
+.research-grid section {
+  overflow: hidden;
+  background: var(--tint);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  border-radius: .55rem;
+}
+.research-grid h3 {
+  margin: 0;
+  padding: .85rem 1.1rem;
+  background: color-mix(in srgb, var(--accent) 16%, var(--tint));
+  color: var(--link);
+}
+.research-grid p { margin: 0; padding: .9rem 1.1rem 1.1rem; }
 @media (max-width: 740px) {
-  .research-grid { grid-template-columns: 1fr; gap: .75rem; }
+  .research-grid { grid-template-columns: 1fr; }
+}
 }
 /* Sidebar artwork: Font Awesome Free 6.7.2 by Fonticons, Inc. (CC BY 4.0,
    https://fontawesome.com/license/free); Simple Icons 14.0.0 (CC0). */
